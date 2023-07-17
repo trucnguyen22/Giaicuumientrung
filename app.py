@@ -49,7 +49,7 @@ def post_something():
 @app.route('/')
 def index():
     # A welcome message to test our server
-    return render_template("login.html")
+    return "<h1>Welcome to our medium-greeting-api!</h1>"
 
 
 if __name__ == '__main__':
