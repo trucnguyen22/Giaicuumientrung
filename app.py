@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, jsonify
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 # from app import db
 
 app = Flask(__name__)
-'''app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:minhtruc@localhost/postgres'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:minhtruc@localhost/postgres'
 db = SQLAlchemy(app)
 
 
@@ -17,7 +17,7 @@ class Student(db.Model):
     def __init__(self, fname, lname, email):
         self.fname = fname
         self.lname = lname
-        self.email = email'''
+        self.email = email
 
 
 @app.route('/')
@@ -25,7 +25,7 @@ def index():
     return render_template('login.html')
 
 
-'''@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['POST'])
 def submit():
     fname = request.form['fname']
     lname = request.form['lname']
@@ -40,7 +40,7 @@ def submit():
     for result in studentResult:
         print(result.fname)
 
-    return render_template('verify.html', data=fname)'''
+    return render_template('verify.html', data=fname)
 
 
 if __name__ == '__main__':
